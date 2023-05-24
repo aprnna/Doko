@@ -8,9 +8,9 @@ using System;
 
 public class Classification : MonoBehaviour {
 
-	const int IMAGE_SIZE = 224;
-	const string INPUT_NAME = "images";
-	const string OUTPUT_NAME = "Softmax";
+	const int IMAGE_SIZE = 244;
+	const string INPUT_NAME = "conv2d_3_input";
+	const string OUTPUT_NAME = "dense_5";
 
 	[Header("Model Stuff")]
 	public NNModel modelFile;

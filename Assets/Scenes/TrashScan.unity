@@ -634,9 +634,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c54938b08d4da44eb6e3936454cc59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelFile: {fileID: 5022602860645237092, guid: b2d08c97577becc4d806c62ddb98b96b,
+  modelFile: {fileID: 5022602860645237092, guid: 232bf9124612b81469e2ef65b05b26ce,
     type: 3}
-  labelAsset: {fileID: 4900000, guid: 8839706cc5046124cbe13825b5626f9b, type: 3}
+  labelAsset: {fileID: 4900000, guid: 6d8ffce0f8a091340b994da69be8fee6, type: 3}
   CameraView: {fileID: 1268051070}
   preprocess: {fileID: 2096356878}
   uiText: {fileID: 1338906662}
