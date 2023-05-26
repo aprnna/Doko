@@ -20,11 +20,17 @@ public class Classification : MonoBehaviour {
 	public CameraView CameraView;
 	public Preprocess preprocess;
 	public Text uiText;
+	public Button uiButton;
 
 	string[] labels;
 	IWorker worker;
 
-	void Start() {
+	private string _label;
+	public ScanManager _scanManager;
+
+	void Start()
+	{
+		uiButton.enabled = false;
         var model = ModelLoader.Load(modelFile);
         worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputePrecompiled, model);
         LoadLabels();
@@ -67,7 +73,16 @@ public class Classification : MonoBehaviour {
 		int index = temp.IndexOf(max);
 
         //set UI text
+        if (labels[index] != "Unknown")
+        {
+	        uiButton.enabled = true;
+        }
+        else
+        {
+	        uiButton.enabled = false;
+        }
         uiText.text = labels[index];
+        _label = labels[index];
 
         //dispose tensors
         tensor.Dispose();
@@ -83,5 +98,11 @@ public class Classification : MonoBehaviour {
 			transformedPixels[i] = (pixels[i] - 127f) / 128f;
 		}
 		return new Tensor(1, IMAGE_SIZE, IMAGE_SIZE, 3, transformedPixels);
+	}
+	
+	public void SendLabel()
+	{
+		StopAllCoroutines();
+		_scanManager.label = _label;
 	}
 }

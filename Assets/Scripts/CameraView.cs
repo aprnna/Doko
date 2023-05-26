@@ -38,4 +38,9 @@ public class CameraView : MonoBehaviour {
     public WebCamTexture GetCamImage() {
         return webcamTexture;
     }
+
+    public void StopCamera()
+    {
+        webcamTexture.Stop();
+    }
 }
