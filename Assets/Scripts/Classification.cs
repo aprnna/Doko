@@ -8,9 +8,9 @@ using System;
 
 public class Classification : MonoBehaviour {
 
-	const int IMAGE_SIZE = 244;
-	const string INPUT_NAME = "conv2d_3_input";
-	const string OUTPUT_NAME = "dense_5";
+	const int IMAGE_SIZE = 224;
+	const string INPUT_NAME = "conv2d_input";
+	const string OUTPUT_NAME = "dense_2";
 
 	[Header("Model Stuff")]
 	public NNModel modelFile;
@@ -21,6 +21,7 @@ public class Classification : MonoBehaviour {
 	public Preprocess preprocess;
 	public Text uiText;
 	public Button uiButton;
+	public AudioSource audioButton;
 
 	string[] labels;
 	IWorker worker;
@@ -30,7 +31,6 @@ public class Classification : MonoBehaviour {
 
 	void Start()
 	{
-		uiButton.enabled = false;
         var model = ModelLoader.Load(modelFile);
         worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputePrecompiled, model);
         LoadLabels();
@@ -75,11 +75,11 @@ public class Classification : MonoBehaviour {
         //set UI text
         if (labels[index] != "Unknown")
         {
-	        uiButton.enabled = true;
+	        uiButton.gameObject.SetActive(true);
         }
         else
         {
-	        uiButton.enabled = false;
+	        uiButton.gameObject.SetActive(false);
         }
         uiText.text = labels[index];
         _label = labels[index];
@@ -102,6 +102,7 @@ public class Classification : MonoBehaviour {
 	
 	public void SendLabel()
 	{
+		audioButton.Play();
 		StopAllCoroutines();
 		_scanManager.label = _label;
 	}

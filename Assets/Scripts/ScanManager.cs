@@ -18,8 +18,9 @@ public class ScanManager : MonoBehaviour
     {
         for (int i = 0; i < trash.Length; i++)
         {
-            if (label == trash[i].name)
+            if (label == trash[i].id)
             {
+                trash[i].scanned = true;
                 displayTrash(i);
             }
         }

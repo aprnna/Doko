@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2763e2de4cc1bb04d8c92e712aa3747a, type: 3}
-  m_Name: metal
+  m_Name: daunkering
   m_EditorClassIdentifier: 
-  name: metal
-  description: Botol kaleng termasuk sampah anorganik yang bisa di daur ulang
-  image: {fileID: 21300000, guid: 575d4939c3ea2dc4ab4a8164cf1886f6, type: 3}
-  trashType: Anorganik
+  id: daunkering
+  name: Daun Kering
+  description: Daun Kering termasuk sampah organik yang bisa di daur ulang
+  image: {fileID: 21300000, guid: 3696b5e5fb48f6141a34a9becdaec1b3, type: 3}
+  trashType: Organik

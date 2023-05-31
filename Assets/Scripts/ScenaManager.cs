@@ -10,4 +10,10 @@ public class ScenaManager : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+
+    public void ChangeSceneWithButton(string scene)
+    {
+        gameObject.GetComponent<AudioSource>().Play();
+        SceneManager.LoadScene(scene);
+    }
 }
