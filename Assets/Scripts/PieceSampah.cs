@@ -1,42 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PieceSampah : MonoBehaviour
-{
-    private bool _dragging;
+public class PieceSampah : MonoBehaviour,IPointerDownHandler,IBeginDragHandler,IEndDragHandler,IDragHandler {
 
-    private Vector2 _offset,_originalPosition;
+    [SerializeField] private Canvas canvas;
 
-    void Awake()
-    {
-        _originalPosition = transform.position;
+    private RectTransform rectTransform;
+    private CanvasGroup canvasGroup;
+
+    private void Awake() {
+        rectTransform = GetComponent<RectTransform>();
+        canvasGroup = GetComponent<CanvasGroup>();
+  
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (!_dragging) return;
-
-        var mousePosition = GetMousePos();
-
-        transform.position = mousePosition - _offset;
+    public void OnBeginDrag(PointerEventData eventData) {
+        Debug.Log("OnBeginDrag");
+        canvasGroup.alpha = .6f;
+        canvasGroup.blocksRaycasts = false;
     }
 
-    private void OnMouseDown()
-    {
-        _dragging = true;
-        _offset = GetMousePos() - (Vector2)transform.position;
+    public void OnDrag(PointerEventData eventData) {
+        Debug.Log("Ondrag");
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor; 
     }
 
-    private void OnMouseUp()
-    {
-        transform.position = _originalPosition;
-            _dragging = false;
+    public void OnEndDrag(PointerEventData eventData) {
+        Debug.Log("OnEndDrag");
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+        
     }
 
-    Vector2 GetMousePos()
-    {
-        return Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    public void OnPointerDown(PointerEventData eventData) {
+        Debug.Log("OnPointerDown");
     }
 }
