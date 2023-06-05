@@ -8,13 +8,23 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TrashCollection.unity
     guid: dee6441f26e346f4bbe35c79fc9b8951
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TrashScan.unity
     guid: df35b54522db2904ea44fd98fe5f5780
   - enabled: 0
     path: Assets/Scenes/SandboxRazak.unity
     guid: d6ead75eccad069409cd0ba2a5c2ee2d
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/ARTrash.unity
+    guid: 8ac4646717da7c344b2b40a6d276aac8
+  - enabled: 0
+    path: Assets/Scenes/ARTest.unity
+    guid: fd6b953c7da1b8e438ccc5ab4112914f
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 284c8cbbdf2fcec4aad982d5ee28d3a8,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: dbe844d6a5087354dbd255d43874efa2,
+      type: 2}
