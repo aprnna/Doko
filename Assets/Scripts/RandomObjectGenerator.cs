@@ -1,13 +1,18 @@
+using System;
 using System.Collections.Generic;
+using Lean.Touch;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using Random = UnityEngine.Random;
 
 public class RandomObjectGenerator : MonoBehaviour
 {
     public ARRaycastManager raycastManager; // AR Raycast Manager component
     public GameObject[] objectsToSpawn; // Array of objects to spawn
     public float spawnInterval = 2f; // Time interval between spawns
+    private int trashCount = 0;
+    public int trashLimit;
 
     private float spawnTimer = 0f; // Timer for tracking spawn interval
 
@@ -22,13 +27,14 @@ public class RandomObjectGenerator : MonoBehaviour
             raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon);
 
             // Check if any planes are detected
-            if (hits.Count > 0)
+            if (hits.Count > 0 && trashCount < trashLimit)
             {
                 // Get a random plane hit result
                 ARRaycastHit hit = hits[Random.Range(0, hits.Count)];
 
                 // Spawn a random object on the detected plane
                 SpawnRandomObject(hit.pose.position);
+                trashCount += 1;
 
                 // Reset the timer for the next spawn
                 spawnTimer = Time.time + spawnInterval;
