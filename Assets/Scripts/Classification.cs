@@ -56,8 +56,9 @@ public class Classification : MonoBehaviour {
 		StartCoroutine(RunModelRoutine(pixels));
 	}
 
-	IEnumerator RunModelRoutine(byte[] pixels) {
-
+	IEnumerator RunModelRoutine(byte[] pixels)
+	{
+		int index;
 		Tensor tensor = TransformInput(pixels);
 
 		var inputs = new Dictionary<string, Tensor> {
@@ -70,7 +71,14 @@ public class Classification : MonoBehaviour {
 		//get largest output
 		List<float> temp = outputTensor.ToReadOnlyArray().ToList();
 		float max = temp.Max();
-		int index = temp.IndexOf(max);
+		if (max > 0.8f)
+		{
+			index = temp.IndexOf(max);
+		}
+		else
+		{
+			index = 4;
+		}
 
         //set UI text
         if (labels[index] != "Unknown")
