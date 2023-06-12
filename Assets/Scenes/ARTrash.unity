@@ -520,13 +520,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raycastManager: {fileID: 1315690918}
   objectsToSpawn:
-  - {fileID: 5868811259900745989, guid: 972864cb9c3289546a935084f37671b9, type: 3}
-  - {fileID: 3515720526585853990, guid: 56408a2e12395bd408f8820fea5b02f5, type: 3}
-  - {fileID: 1254291414962583681, guid: e0c7aa8ad16f63e44bba35766b42537f, type: 3}
-  - {fileID: 6754092997375288971, guid: 379067b3297567448ad43d2923e751b7, type: 3}
-  - {fileID: 1803356139503984477, guid: e643cc67b58dbd44c8cbe2d8e5f4fb29, type: 3}
+  - {fileID: 1657287086521105210, guid: cbe6d27c3f433824686eb6d6f3da40bc, type: 3}
+  - {fileID: 450658705240531766, guid: e643cc67b58dbd44c8cbe2d8e5f4fb29, type: 3}
+  - {fileID: 2491339054301927119, guid: a55104eb5f2d53a4598322b697d71179, type: 3}
+  - {fileID: 4899516982966412645, guid: e0c7aa8ad16f63e44bba35766b42537f, type: 3}
+  - {fileID: 2667966002829259955, guid: 56408a2e12395bd408f8820fea5b02f5, type: 3}
   spawnInterval: 2
-  trashLimit: 10
+  trashLimit: 5
 --- !u!4 &637482846
 Transform:
   m_ObjectHideFlags: 0
@@ -689,6 +689,7 @@ GameObject:
   - component: {fileID: 1378293855}
   - component: {fileID: 1378293854}
   - component: {fileID: 1378293856}
+  - component: {fileID: 1378293857}
   m_Layer: 0
   m_Name: LeanTouch
   m_TagString: Untagged
@@ -713,7 +714,7 @@ MonoBehaviour:
   ReferenceDpi: 200
   GuiLayers:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 33
   RecordFingers: 1
   RecordThreshold: 5
   RecordLimit: 0
@@ -750,19 +751,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectUsing: 0
-  SelectUsingAlt: -1
+  SelectUsingAlt: 3
   SelectUsingAltAlt: -1
   Search: 1
   Camera: {fileID: 263300390}
   LayerMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 64
   RequiredTag: 
   MaxScreenDistance: 50
   MaxSelectables: 0
   Reselect: 3
   AutoDeselect: 0
   SuppressMultipleSelectWarning: 0
+--- !u!114 &1378293857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378293853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb097c07812299498915a0a3e793843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IgnoreStartedOverGui: 1
+  RequiredSelectable: {fileID: 0}
+  onFinger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1378293856}
+        m_TargetAssemblyTypeName: Lean.Touch.LeanSelectBase, LeanTouch
+        m_MethodName: SelectScreenPosition
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ScreenDepth:
+    Conversion: 1
+    Camera: {fileID: 0}
+    Object: {fileID: 0}
+    Layers:
+      serializedVersion: 2
+      m_Bits: 4294967291
+    Distance: 0
+  onWorld:
+    m_PersistentCalls:
+      m_Calls: []
+  onScreen:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1785372564
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +820,7 @@ GameObject:
   - component: {fileID: 1785372568}
   - component: {fileID: 1785372567}
   - component: {fileID: 1785372566}
+  - component: {fileID: 1785372570}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -861,7 +906,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1785372566}
         m_TargetAssemblyTypeName: ScenaManager, Assembly-CSharp
-        m_MethodName: ChangeSceneWithButton
+        m_MethodName: ChangeSceneWithSound
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -909,6 +954,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785372564}
   m_CullTransparentMesh: 1
+--- !u!82 &1785372570
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785372564}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7685620fb9f5e6248a40d759c0f3e9be, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2106855823
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +1118,7 @@ Canvas:
   m_GameObject: {fileID: 2106855823}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 263300390}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
