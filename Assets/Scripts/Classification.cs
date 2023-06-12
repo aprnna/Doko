@@ -9,8 +9,8 @@ using System;
 public class Classification : MonoBehaviour {
 
 	const int IMAGE_SIZE = 224;
-	const string INPUT_NAME = "conv2d_input";
-	const string OUTPUT_NAME = "dense_2";
+	const string INPUT_NAME = "conv2d_2_input";
+	const string OUTPUT_NAME = "dense_5";
 
 	[Header("Model Stuff")]
 	public NNModel modelFile;
@@ -71,7 +71,7 @@ public class Classification : MonoBehaviour {
 		//get largest output
 		List<float> temp = outputTensor.ToReadOnlyArray().ToList();
 		float max = temp.Max();
-		if (max > 0.8f)
+		if (max > 0.7f)
 		{
 			index = temp.IndexOf(max);
 		}
@@ -81,7 +81,7 @@ public class Classification : MonoBehaviour {
 		}
 
         //set UI text
-        if (labels[index] != "Unknown")
+        if (labels[index] != "unknown")
         {
 	        uiButton.gameObject.SetActive(true);
         }
