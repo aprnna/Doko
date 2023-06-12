@@ -1,0 +1,1 @@
+{"0": "botol", "1": "daunkering", "2": "kaleng", "3": "kertas", "4": "unknown"}

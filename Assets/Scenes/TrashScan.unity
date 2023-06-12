@@ -2219,9 +2219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c54938b08d4da44eb6e3936454cc59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelFile: {fileID: 5022602860645237092, guid: ddd5069984df6a049a1e0629450f0d8c,
+  modelFile: {fileID: 5022602860645237092, guid: 846b4d1a6cdd90e4d9c26ef61d2fe233,
     type: 3}
-  labelAsset: {fileID: 4900000, guid: 57cd9d65a155f244893a6ab89e649d6a, type: 3}
+  labelAsset: {fileID: 4900000, guid: 1940bdf34c0c2a948b98f60de4f5f1d3, type: 3}
   CameraView: {fileID: 1268051070}
   preprocess: {fileID: 2096356878}
   uiText: {fileID: 1338906662}
