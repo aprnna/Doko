@@ -2219,7 +2219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c54938b08d4da44eb6e3936454cc59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  modelFile: {fileID: 5022602860645237092, guid: 846b4d1a6cdd90e4d9c26ef61d2fe233,
+  modelFile: {fileID: 5022602860645237092, guid: 1418ee134ccebf24295b4ae6aafcb97b,
     type: 3}
   labelAsset: {fileID: 4900000, guid: 1940bdf34c0c2a948b98f60de4f5f1d3, type: 3}
   CameraView: {fileID: 1268051070}

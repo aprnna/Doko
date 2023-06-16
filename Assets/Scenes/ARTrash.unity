@@ -525,6 +525,9 @@ MonoBehaviour:
   - {fileID: 2491339054301927119, guid: a55104eb5f2d53a4598322b697d71179, type: 3}
   - {fileID: 4899516982966412645, guid: e0c7aa8ad16f63e44bba35766b42537f, type: 3}
   - {fileID: 2667966002829259955, guid: 56408a2e12395bd408f8820fea5b02f5, type: 3}
+  trashCans:
+  - {fileID: 3004586940370263644, guid: ad7c9360d71ec1b4eb1a7dc4399716eb, type: 3}
+  - {fileID: 5698552270491763104, guid: 10e42cfe28f693d47915272034e705cc, type: 3}
   spawnInterval: 2
   trashLimit: 5
 --- !u!4 &637482846
