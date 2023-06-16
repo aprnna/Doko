@@ -1,13 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Lean.Touch;
 
-public class InstructionSlice : MonoBehaviour
+
+public class InstructionColor : MonoBehaviour
 {
+    private bool hasRun = false;
     private Animator mAnimator;
-    private void Start()
+
+    // Start is called before the first frame update
+    void Start()
     {
         mAnimator = GetComponent<Animator>();
-        mAnimator.SetTrigger("Slice");
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+        if(!hasRun && GameObject.Find("Check").gameObject.transform.GetChild(0).gameObject.activeSelf)
+        {
+            mAnimator.SetTrigger("Colored");
+            hasRun = true; // Setel boolean menjadi true agar fungsi hanya dijalankan sekali
+        }
     }
     private void OnEnable()
     {
@@ -25,5 +41,4 @@ public class InstructionSlice : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }

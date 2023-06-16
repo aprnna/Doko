@@ -6,6 +6,7 @@ public class DestroyWhenTap: MonoBehaviour
     public GameObject ButtonHover;
     public GameObject Instruksi;
     public GameObject Check1;
+    public GameObject PaintCursor;
     private Animator mAnimator;
     private LeanSelectable leanSelectable;
 
@@ -35,7 +36,7 @@ public class DestroyWhenTap: MonoBehaviour
         Instruksi.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         Instruksi.gameObject.transform.GetChild(1).gameObject.SetActive(true);
         Check1.gameObject.SetActive(true);
-        Destroy(gameObject,2f);
-
+        PaintCursor.gameObject.SetActive(true);
+        Destroy(gameObject, 1f);
     }
 }
