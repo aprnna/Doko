@@ -1,13 +1,14 @@
 using UnityEngine;
 using Lean.Touch;
 
-public class InstructionSlice : MonoBehaviour
+public class InstructionCursor : MonoBehaviour
 {
+    public string Trigger;
     private Animator mAnimator;
     private void Start()
     {
         mAnimator = GetComponent<Animator>();
-        mAnimator.SetTrigger("Slice");
+        mAnimator.SetTrigger(Trigger);
     }
     private void OnEnable()
     {

@@ -7,7 +7,7 @@ public class EnableDisable : MonoBehaviour
 {
     public GameObject DecorItems;
     public GameObject Hover;
-    public bool isEnable = true;
+    public bool isEnable = false;
     // Start is called before the first frame update
     public void ButtonClicked()
     {

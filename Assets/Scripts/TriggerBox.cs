@@ -1,19 +1,21 @@
 using UnityEngine;
 using Lean.Touch;
 
-public class Coloring : MonoBehaviour
+public class TriggerBox : MonoBehaviour
 {
     [SerializeField]
     private GameObject object1;
     [SerializeField]
     private GameObject object2;
     [SerializeField]
-    private Transform colored;
+    private Transform After;
     [SerializeField]
-    private Transform unColored;
+    private Transform Before;
     public GameObject ButtonHover;
     public GameObject Instruksi;
-    public GameObject Check2;
+    public GameObject Check;
+    public int Child;
+
 
     private bool fingerDownOnObject1 = false;
 
@@ -65,13 +67,13 @@ public class Coloring : MonoBehaviour
             {
                 Debug.Log("Finger moved from Object 1 to Object 2");
                 // Lakukan logika yang diinginkan ketika finger down dari Object 1 dipindahkan ke Object 2
-                unColored.gameObject.SetActive(false);
-                colored.gameObject.SetActive(true);
-                ButtonHover.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-                ButtonHover.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-                Instruksi.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-                Instruksi.gameObject.transform.GetChild(2).gameObject.SetActive(true);
-                Check2.gameObject.SetActive(true);
+                Before.gameObject.SetActive(false);
+                After.gameObject.SetActive(true);
+                ButtonHover.gameObject.transform.GetChild(Child-1).gameObject.SetActive(false);
+                ButtonHover.gameObject.transform.GetChild(Child).gameObject.SetActive(true);
+                Instruksi.gameObject.transform.GetChild(Child-1).gameObject.SetActive(false);
+                Instruksi.gameObject.transform.GetChild(Child).gameObject.SetActive(true);
+                Check.gameObject.SetActive(true);
             }
 
             fingerDownOnObject1 = false;
