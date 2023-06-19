@@ -15,10 +15,11 @@ public class TriggerBox : MonoBehaviour
     public GameObject Instruksi;
     public GameObject Check;
     public int Child;
+    public AudioSource Sfx;
 
 
     private bool fingerDownOnObject1 = false;
-
+    private bool Done = true;
    
     private void OnEnable()
     {
@@ -44,9 +45,11 @@ public class TriggerBox : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject == object1)
+            if (hit.collider.gameObject == object1 && Done)
             {
                 fingerDownOnObject1 = true;
+                Sfx.Play();
+                Done = false;
             }
         }
     }
@@ -74,6 +77,7 @@ public class TriggerBox : MonoBehaviour
                 Instruksi.gameObject.transform.GetChild(Child-1).gameObject.SetActive(false);
                 Instruksi.gameObject.transform.GetChild(Child).gameObject.SetActive(true);
                 Check.gameObject.SetActive(true);
+                Sfx.Stop();
             }
 
             fingerDownOnObject1 = false;

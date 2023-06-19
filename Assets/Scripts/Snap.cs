@@ -12,9 +12,11 @@ public class Snap : MonoBehaviour
     public GameObject PosisiKaleng;
     public GameObject Check;
     public GameObject Decor;
+
     private Vector3 startPosition;
     private Vector3 startScale;
     private bool isDragging = false;
+
 
     private void Start()
     {
@@ -48,21 +50,15 @@ public class Snap : MonoBehaviour
             if (IsInSnapPosition() && PosisiKaleng.transform.childCount <= 0)
             {
                 // Jika iya, atur posisi objek ke posisi snap
-                // transform.position = snapPosition.position;
                 GameObject newLine = Instantiate(gameObject, PosisiKaleng.transform.position, Quaternion.identity, snapPosition);
                 
                 newLine.gameObject.transform.localScale = startScale * snapScaleMultiplier;
-
-                // Perbesar skala objek setelah menjepit
-                // transform.localScale = startScale * snapScaleMultiplier;
-                // Set objek yang menjepit sebagai objek yang telah menjepit di posisi snap
                 gameObject.SetActive(false);
                 Check.SetActive(true);
-                Decor.SetActive(false);
+                Destroy(Decor, 1f);
             }
             else
             {
-                // Jika tidak, kembalikan objek ke posisi awal dan skala awal
                 transform.position = startPosition;
                 transform.localScale = startScale;
             }
@@ -71,8 +67,6 @@ public class Snap : MonoBehaviour
     }
     private bool IsInSnapPosition()
     {
-        // Ganti kode ini dengan kondisi yang sesuai untuk menentukan apakah objek berada di posisi snap yang diinginkan.
-        // Misalnya, jika menggunakan jarak toleransi:
         float tolerance = 1f;
         float distance = Vector3.Distance(transform.position, snapPosition.position);
         return distance <= tolerance;
