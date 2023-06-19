@@ -8,9 +8,10 @@ using System;
 
 public class Classification : MonoBehaviour {
 
-	const int IMAGE_SIZE = 224;
-	const string INPUT_NAME = "conv2d_2_input";
-	const string OUTPUT_NAME = "dense_5";
+	public int IMAGE_SIZE;
+	public string INPUT_NAME;
+	public string OUTPUT_NAME;
+	public float limit;
 
 	[Header("Model Stuff")]
 	public NNModel modelFile;
@@ -32,7 +33,7 @@ public class Classification : MonoBehaviour {
 	void Start()
 	{
         var model = ModelLoader.Load(modelFile);
-        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.ComputePrecompiled, model);
+        worker = WorkerFactory.CreateWorker(WorkerFactory.Type.CSharpBurst, model);
         LoadLabels();
 	}
 
@@ -71,7 +72,7 @@ public class Classification : MonoBehaviour {
 		//get largest output
 		List<float> temp = outputTensor.ToReadOnlyArray().ToList();
 		float max = temp.Max();
-		if (max > 0.7f)
+		if (max > limit)
 		{
 			index = temp.IndexOf(max);
 		}
