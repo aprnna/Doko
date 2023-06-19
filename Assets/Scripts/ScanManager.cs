@@ -11,7 +11,7 @@ public class ScanManager : MonoBehaviour
     public Text typeText;
     public Text nameText;
     public Text descText;
-    public Image trashImage;
+    public GameObject trashImage;
     
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,8 @@ public class ScanManager : MonoBehaviour
         nameText.text = trash[i].name;
         typeText.text = trash[i].trashType;
         descText.text = trash[i].description;
-        trashImage.sprite = trash[i].image;
+        trashImage.GetComponent<Image>().sprite = trash[i].image;
+        RectTransform rt = trashImage.GetComponent (typeof (RectTransform)) as RectTransform;
+        rt.sizeDelta = new Vector2(trash[i].image.pivot.x * 2, trash[i].image.pivot.y * 2);
     }
 }

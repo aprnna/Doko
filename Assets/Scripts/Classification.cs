@@ -90,7 +90,6 @@ public class Classification : MonoBehaviour {
         {
 	        uiButton.gameObject.SetActive(false);
         }
-        uiText.text = labels[index];
         _label = labels[index];
 
         //dispose tensors
