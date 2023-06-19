@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8889085379520391595}
   - component: {fileID: 1907550932013101606}
   - component: {fileID: 944505761090740420}
-  - component: {fileID: 5201265713777424393}
   m_Layer: 0
   m_Name: BinBaseRim.007
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5201265713777424393
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679684843593482610}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 783371157503520196, guid: 1678fd8a47a1c6748b487a130c054d05, type: 3}
 --- !u!1 &5698552270491763104
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,9 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4926519858253273882}
+  - component: {fileID: 3663739089215906040}
   m_Layer: 0
-  m_Name: trash-anorganik
-  m_TagString: Untagged
+  m_Name: Anorganik
+  m_TagString: Trash Can
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +117,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3663739089215906040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5698552270491763104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.2193253, y: 5.300232, z: 3.8695645}
+  m_Center: {x: -1.1877261, y: 1.7597935, z: -0.28851002}
 --- !u!1 &6729053129632757577
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +141,6 @@ GameObject:
   - component: {fileID: 1337055580302502120}
   - component: {fileID: 4637368495441439553}
   - component: {fileID: 2062142429438335347}
-  - component: {fileID: 4249805212550088527}
   m_Layer: 0
   m_Name: BinBaseRim.008
   m_TagString: Untagged
@@ -215,17 +213,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4249805212550088527
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6729053129632757577}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3571791632471380962, guid: 1678fd8a47a1c6748b487a130c054d05, type: 3}

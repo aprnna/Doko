@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
 
 public class RandomObjectGenerator : MonoBehaviour
 {
@@ -16,8 +17,14 @@ public class RandomObjectGenerator : MonoBehaviour
     public int trashLimit;
     private int trashCanCount = 0;
     private int trashCanLimit = 1;
+    public GameObject uiText;
 
     private float spawnTimer = 0f; // Timer for tracking spawn interval
+
+    private void Start()
+    {
+        uiText.SetActive(true);
+    }
 
     void Update()
     {
@@ -32,6 +39,7 @@ public class RandomObjectGenerator : MonoBehaviour
             // Check if any planes are detected
             if (hits.Count > 1 && trashCanCount < trashCanLimit)
             {
+                
                 // Get a random plane hit result
                 ARRaycastHit hit = hits[Random.Range(0, hits.Count)];
 
@@ -71,7 +79,8 @@ public class RandomObjectGenerator : MonoBehaviour
     {
         Vector3 randomPosition = hit.pose.position + Random.insideUnitSphere * 0.5f;
         Vector3 randomPosition1 = hit.pose.position + Random.insideUnitSphere * 0.5f;
+        uiText.GetComponent<Text>().text = randomPosition.ToString();
         Instantiate(trashCans[0], randomPosition, Quaternion.identity);
-        Instantiate(trashCans[1], randomPosition1, Quaternion.identity);
+        Instantiate(trashCans[1], (randomPosition + new Vector3(0.5f,0f,0f)), Quaternion.identity);
     }
 }
