@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HomeScene.unity
     guid: 5db345dcd2c1b1e42a733ee048b00105
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARTrash.unity
     guid: 8ac4646717da7c344b2b40a6d276aac8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TrashCollection.unity
     guid: dee6441f26e346f4bbe35c79fc9b8951
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TrashScan.unity
     guid: df35b54522db2904ea44fd98fe5f5780
   - enabled: 0
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ARTest.unity
     guid: fd6b953c7da1b8e438ccc5ab4112914f
+  - enabled: 1
+    path: Assets/Scenes/Recycle.unity
+    guid: a69856830751b184bb3c5d69785245ac
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 284c8cbbdf2fcec4aad982d5ee28d3a8,
       type: 2}
