@@ -12,11 +12,13 @@ public class Berhasiil : MonoBehaviour
     private bool Done = true;
     private Animator mAnimator;
     private Animator mAnimator2;
+    private Animator mAnimator3;
 
     private void Start()
     {
         mAnimator = Background.transform.GetChild(0).GetComponent<Animator>();
         mAnimator2 = Background.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        mAnimator3 = Background.transform.GetChild(0).GetChild(1).GetComponent<Animator>();
     }
     void Update()
     {
@@ -30,6 +32,7 @@ public class Berhasiil : MonoBehaviour
             Finishing.SetActive(false);
             mAnimator.SetTrigger("FadeInScale");
             mAnimator2.SetTrigger("FadeInUp");
+            mAnimator3.SetTrigger("Spin");
             Done = false; 
         }
     }

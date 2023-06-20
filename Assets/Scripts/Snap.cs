@@ -55,7 +55,7 @@ public class Snap : MonoBehaviour
                 newLine.gameObject.transform.localScale = startScale * snapScaleMultiplier;
                 gameObject.SetActive(false);
                 Check.SetActive(true);
-                Destroy(Decor, 1f);
+                Decor.SetActive(false);
             }
             else
             {
