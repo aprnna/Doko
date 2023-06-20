@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Lean.Touch;
 public class Berhasiil : MonoBehaviour
 {
     public GameObject Check;
@@ -30,6 +30,12 @@ public class Berhasiil : MonoBehaviour
             
             ChangeSceneWithSound(Background);
             GameObject newLine = Instantiate(Finishing, Background.transform.GetChild(0));
+            LeanDragTranslate script = Background.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<LeanDragTranslate>();
+            LeanSelectable script2 = Background.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<LeanSelectable>();
+            var test = Background.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<SphereCollider>();
+            script2.IsSelected = false; 
+            script.enabled = false;
+            test.enabled = false;
             Done = false; 
         }
     }
@@ -55,6 +61,7 @@ public class Berhasiil : MonoBehaviour
         mAnimator.SetTrigger("FadeInScale");
         mAnimator2.SetTrigger("FadeInUp");
         mAnimator3.SetTrigger("Spin");
+
 
     }
     private bool CheckAllChildrenActiveStatus()
