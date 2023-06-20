@@ -78,9 +78,6 @@ public class RandomObjectGenerator : MonoBehaviour
     void SpawnTrashCan(ARRaycastHit hit)
     {
         Vector3 randomPosition = hit.pose.position + Random.insideUnitSphere * 0.5f;
-        Vector3 randomPosition1 = hit.pose.position + Random.insideUnitSphere * 0.5f;
-        uiText.GetComponent<Text>().text = randomPosition.ToString();
         Instantiate(trashCans[0], randomPosition, Quaternion.identity);
-        Instantiate(trashCans[1], (randomPosition + new Vector3(0.5f,0f,0f)), Quaternion.identity);
     }
 }
