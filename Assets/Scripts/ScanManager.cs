@@ -12,10 +12,13 @@ public class ScanManager : MonoBehaviour
     public Text nameText;
     public Text descText;
     public GameObject trashImage;
-    
+    public Animator mAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
+        mAnimator.SetTrigger("Spin");
+
         for (int i = 0; i < trash.Length; i++)
         {
             if (label == trash[i].id)

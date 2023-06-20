@@ -10,6 +10,8 @@ public class Berhasiil : MonoBehaviour
     public Canvas CanvasMain;
     public Canvas CanvasBerhasil;
     private bool Done = true;
+    private bool _isPlaying;
+
     private Animator mAnimator;
     private Animator mAnimator2;
     private Animator mAnimator3;
@@ -25,16 +27,35 @@ public class Berhasiil : MonoBehaviour
         bool allChildrenActive = CheckAllChildrenActiveStatus();
         if (allChildrenActive && Done)
         {
-            CanvasMain.gameObject.SetActive(false);
-            CanvasBerhasil.gameObject.SetActive(true);
-            Background.SetActive(true);
+            
+            ChangeSceneWithSound(Background);
             GameObject newLine = Instantiate(Finishing, Background.transform.GetChild(0));
-            Finishing.SetActive(false);
-            mAnimator.SetTrigger("FadeInScale");
-            mAnimator2.SetTrigger("FadeInUp");
-            mAnimator3.SetTrigger("Spin");
             Done = false; 
         }
+    }
+    public void ChangeSceneWithSound(GameObject Background)
+    {
+        if (!_isPlaying)
+        {
+            StartCoroutine(PlayAudioAndChangeScene(Background));
+        }
+    }
+
+    private IEnumerator PlayAudioAndChangeScene(GameObject Background)
+    {
+        _isPlaying = true;
+        var audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.Play();
+        yield return new WaitForSeconds(audioSource.clip.length);
+        CanvasMain.gameObject.SetActive(false);
+        CanvasBerhasil.gameObject.SetActive(true);
+        Background.SetActive(true);
+        Finishing.SetActive(false);
+        GameObject.Find("Lubang").SetActive(false);
+        mAnimator.SetTrigger("FadeInScale");
+        mAnimator2.SetTrigger("FadeInUp");
+        mAnimator3.SetTrigger("Spin");
+
     }
     private bool CheckAllChildrenActiveStatus()
     {

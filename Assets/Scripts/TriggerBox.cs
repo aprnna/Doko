@@ -19,7 +19,6 @@ public class TriggerBox : MonoBehaviour
 
 
     private bool fingerDownOnObject1 = false;
-    private bool Done = true;
    
     private void OnEnable()
     {
@@ -45,17 +44,17 @@ public class TriggerBox : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject == object1 && Done)
+            if (hit.collider.gameObject == object1)
             {
                 fingerDownOnObject1 = true;
                 Sfx.Play();
-                Done = false;
             }
         }
     }
 
     private void HandleFingerUp(LeanFinger finger)
     {
+        Sfx.Stop();
         if (finger.StartedOverGui)
         {
             return;
