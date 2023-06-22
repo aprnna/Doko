@@ -39,7 +39,7 @@ public class RandomObjectGenerator : MonoBehaviour
             // Check if any planes are detected
             if (hits.Count > 1 && trashCanCount < trashCanLimit)
             {
-                
+                uiText.SetActive(false);
                 // Get a random plane hit result
                 ARRaycastHit hit = hits[Random.Range(0, hits.Count)];
 
