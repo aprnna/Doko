@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class CameraView : MonoBehaviour {
