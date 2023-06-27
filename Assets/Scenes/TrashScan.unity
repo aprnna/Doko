@@ -2236,7 +2236,7 @@ MonoBehaviour:
   IMAGE_SIZE: 224
   INPUT_NAME: sequential_1_input
   OUTPUT_NAME: sequential_3
-  limit: 0.99
+  limit: 0.9
   modelFile: {fileID: 5022602860645237092, guid: 1418ee134ccebf24295b4ae6aafcb97b,
     type: 3}
   labelAsset: {fileID: 4900000, guid: 1940bdf34c0c2a948b98f60de4f5f1d3, type: 3}
