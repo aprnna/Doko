@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public int trashCount;
     public int trashLimit;
 
+    public bool isPlaying = true;
+
     private void Start()
     {
         trashCount = 0;
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
     {
         if (trashCount == trashLimit)
         {
-            gameObject.GetComponent<ScenaManager>().ChangeSceneWithSound("SandboxRazak");
+            isPlaying = false;
         }
     }
 }

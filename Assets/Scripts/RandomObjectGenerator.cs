@@ -79,5 +79,6 @@ public class RandomObjectGenerator : MonoBehaviour
     {
         Vector3 randomPosition = hit.pose.position + Random.insideUnitSphere * 0.5f;
         Instantiate(trashCans[0], randomPosition, Quaternion.identity);
+        Instantiate(trashCans[1], randomPosition + new Vector3(0.5f, 0f, 0f), Quaternion.identity);
     }
 }
