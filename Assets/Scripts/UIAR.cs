@@ -15,7 +15,6 @@ public class UIAR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        finishPanel.SetActive(false);
         _gm = FindObjectOfType<GameManager>();
         uiSlider.value = 0;
         uiSlider.maxValue = _gm.trashLimit;

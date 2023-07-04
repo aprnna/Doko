@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1530361900208239919}
   - component: {fileID: 1090500928641813000}
   - component: {fileID: -2397323690634302207}
-  - component: {fileID: 4679820348920875274}
   - component: {fileID: 5520610474057793036}
   m_Layer: 6
   m_Name: botol
@@ -138,19 +137,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &4679820348920875274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450658705240531766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d421b0b2497c67045b236dfbbcac2079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Anorganik
 --- !u!65 &5520610474057793036
 BoxCollider:
   m_ObjectHideFlags: 0

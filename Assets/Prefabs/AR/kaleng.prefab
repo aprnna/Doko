@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6659696726983841020}
   - component: {fileID: -1618845661617576742}
   - component: {fileID: 1244840578052935107}
-  - component: {fileID: -5905108649213885667}
   - component: {fileID: 4166677084413486663}
   m_Layer: 6
   m_Name: kaleng
@@ -139,19 +138,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isSelected: 0
---- !u!114 &-5905108649213885667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4899516982966412645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d421b0b2497c67045b236dfbbcac2079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Anorganik
 --- !u!65 &4166677084413486663
 BoxCollider:
   m_ObjectHideFlags: 0
