@@ -78,7 +78,7 @@ public class Classification : MonoBehaviour {
 		}
 		else
 		{
-			index = 4;
+			index = 8;
 		}
 
         //set UI text

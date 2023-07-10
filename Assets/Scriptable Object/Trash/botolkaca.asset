@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2763e2de4cc1bb04d8c92e712aa3747a, type: 3}
-  m_Name: botol
+  m_Name: botolkaca
   m_EditorClassIdentifier: 
-  id: botol
-  name: Botol
-  description: Botol Plastik termasuk sampah anorganik yang bisa di daur ulang
-  image: {fileID: 21300000, guid: 0697254ae2a7bad4fa31dd72e4d517ee, type: 3}
+  id: botolkaca
+  name: Botol Kaca
+  description: Botol Kaca termasuk sampah anorganik yang bisa di daur ulang
+  image: {fileID: 21300000, guid: 575d4939c3ea2dc4ab4a8164cf1886f6, type: 3}
   trashType: Anorganik
   scanned: 0
