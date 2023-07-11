@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,13 +19,20 @@ public class ScanManager : MonoBehaviour
     void Start()
     {
         mAnimator.SetTrigger("Spin");
-
+        
         for (int i = 0; i < trash.Length; i++)
         {
             if (label == trash[i].id)
             {
                 trash[i].scanned = true;
                 displayTrash(i);
+                Trash scriptableObject = trash[i];
+                SaveLoadManager.SaveScriptableObject(scriptableObject, trash[i].id + ".json");
+            }
+            else
+            {
+                Trash scriptableObject = trash[i];
+                SaveLoadManager.SaveScriptableObject(scriptableObject, trash[i].id + ".json");
             }
         }
     }

@@ -2182,10 +2182,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &2042743850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2243,7 +2243,7 @@ MonoBehaviour:
   limit: 0.9
   modelFile: {fileID: 5022602860645237092, guid: 9d5c1edc12013c24296cb0d4993003ae,
     type: 3}
-  labelAsset: {fileID: 4900000, guid: 1940bdf34c0c2a948b98f60de4f5f1d3, type: 3}
+  labelAsset: {fileID: 4900000, guid: 58c1b35838e628c498b89d0f943cfe44, type: 3}
   CameraView: {fileID: 1268051070}
   preprocess: {fileID: 2096356878}
   uiText: {fileID: 0}

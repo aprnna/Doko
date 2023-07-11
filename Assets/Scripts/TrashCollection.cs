@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,14 +17,19 @@ public class TrashCollection : MonoBehaviour
     {
         for (int i = 0; i < trashes.Length; i++)
         {
-            if (trashes[i].scanned == true)
+            Trash scriptableObject = SaveLoadManager.LoadScriptableObject<Trash>(trashes[i].id + ".json");
+            trashes[i] = scriptableObject;
+            if (scriptableObject != null)
             {
-                trashImage[i].color = new Color(255, 255, 255, 255);
-                checkImage[i].color = new Color(255, 255, 255, 255);
-            }
-            else
-            {
-                checkImage[i].color = new Color(0, 0, 0, 0);
+                if (trashes[i].scanned == true)
+                {
+                    trashImage[i].color = new Color(255, 255, 255, 255);
+                    checkImage[i].color = new Color(255, 255, 255, 255);
+                }
+                else
+                {
+                    checkImage[i].color = new Color(0, 0, 0, 0);
+                }
             }
         }
         
