@@ -47,7 +47,7 @@ public class Snap : MonoBehaviour
         {
             isDragging = false;
             // Cek apakah objek berada di posisi yang diinginkan dan tidak ada objek lain di posisi snap
-            if (IsInSnapPosition() && PosisiKaleng.transform.childCount <= 0)
+            if (IsInSnapPosition() && PosisiKaleng.transform.childCount <= 1)
             {
                 // Jika iya, atur posisi objek ke posisi snap
                 GameObject newLine = Instantiate(gameObject, PosisiKaleng.transform.position, Quaternion.identity, snapPosition);
@@ -67,7 +67,7 @@ public class Snap : MonoBehaviour
     }
     private bool IsInSnapPosition()
     {
-        float tolerance = 1f;
+        float tolerance = 2f;
         float distance = Vector3.Distance(transform.position, snapPosition.position);
         return distance <= tolerance;
     }

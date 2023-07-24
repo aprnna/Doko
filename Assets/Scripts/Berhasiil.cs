@@ -30,9 +30,9 @@ public class Berhasiil : MonoBehaviour
             
             ChangeSceneWithSound(Background);
             GameObject newLine = Instantiate(Finishing, Background.transform.GetChild(0));
-            LeanDragTranslate script = Background.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<LeanDragTranslate>();
-            LeanSelectable script2 = Background.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<LeanSelectable>();
-            var test = Background.transform.GetChild(0).GetChild(2).GetChild(0).GetComponent<SphereCollider>();
+            LeanDragTranslate script = Background.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<LeanDragTranslate>();
+            LeanSelectable script2 = Background.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<LeanSelectable>();
+            var test = Background.transform.GetChild(0).GetChild(2).GetChild(1).GetComponent<SphereCollider>();
             script2.IsSelected = false; 
             script.enabled = false;
             test.enabled = false;
@@ -59,7 +59,7 @@ public class Berhasiil : MonoBehaviour
         Finishing.SetActive(false);
         GameObject.Find("Lubang").SetActive(false);
         mAnimator.SetTrigger("FadeInScale");
-        mAnimator2.SetTrigger("FadeInUp");
+        //mAnimator2.SetTrigger("FadeInUp");
         mAnimator3.SetTrigger("Spin");
 
 

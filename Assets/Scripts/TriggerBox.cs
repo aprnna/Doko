@@ -31,7 +31,7 @@ public class TriggerBox : MonoBehaviour
         LeanTouch.OnFingerDown -= HandleFingerDown;
         LeanTouch.OnFingerUp -= HandleFingerUp;
     }
-
+ 
     private void HandleFingerDown(LeanFinger finger)
     {
         if (finger.StartedOverGui)
@@ -44,7 +44,7 @@ public class TriggerBox : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject == object1)
+            if (hit.collider.gameObject == object1 && Before.gameObject.active)
             {
                 fingerDownOnObject1 = true;
                 Sfx.Play();
