@@ -44,7 +44,7 @@ public class TriggerBox : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.gameObject == object1 && Before.gameObject.active)
+            if (hit.collider.gameObject == object1 && Before.gameObject.activeSelf)
             {
                 fingerDownOnObject1 = true;
                 Sfx.Play();

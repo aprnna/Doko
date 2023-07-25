@@ -59,7 +59,10 @@ public class Berhasiil : MonoBehaviour
         Finishing.SetActive(false);
         GameObject.Find("Lubang").SetActive(false);
         mAnimator.SetTrigger("FadeInScale");
-        //mAnimator2.SetTrigger("FadeInUp");
+        if(mAnimator2 != null)
+        {
+            mAnimator2.SetTrigger("FadeInUp");
+        }
         mAnimator3.SetTrigger("Spin");
 
 
