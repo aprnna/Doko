@@ -47,14 +47,20 @@ public class TriggerBox : MonoBehaviour
             if (hit.collider.gameObject == object1 && Before.gameObject.activeSelf)
             {
                 fingerDownOnObject1 = true;
-                Sfx.Play();
+                if (Sfx != null)
+                {
+                    Sfx.Play();
+                }
             }
         }
     }
 
     private void HandleFingerUp(LeanFinger finger)
     {
-        Sfx.Stop();
+        if (Sfx != null)
+        {
+            Sfx.Stop();
+        }
         if (finger.StartedOverGui)
         {
             return;
@@ -76,7 +82,10 @@ public class TriggerBox : MonoBehaviour
                 Instruksi.gameObject.transform.GetChild(Child-1).gameObject.SetActive(false);
                 Instruksi.gameObject.transform.GetChild(Child).gameObject.SetActive(true);
                 Check.gameObject.SetActive(true);
-                Sfx.Stop();
+                if(Sfx != null)
+                {
+                    Sfx.Stop();
+                }
             }
 
             fingerDownOnObject1 = false;

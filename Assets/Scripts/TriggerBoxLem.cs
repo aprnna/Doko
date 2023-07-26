@@ -11,10 +11,11 @@ public class TriggerBoxLem : MonoBehaviour
     public GameObject ButtonHover;
     public GameObject Instruksi;
     public GameObject Check;
+    public GameObject cursorDaunKering;
     public int Child;
     public AudioSource Sfx;
 
-    public GameObject cursor;
+    public GameObject cursorLem;
     private Animator mAnimator;
 
     private bool fingerDownOnObject = false;
@@ -27,7 +28,7 @@ public class TriggerBoxLem : MonoBehaviour
 
     private void Start()
     {
-        mAnimator = cursor.GetComponent<Animator>();
+        mAnimator = cursorLem.GetComponent<Animator>();
         trigger = "LemKanan";
         mAnimator.SetTrigger(trigger);
         startPoint = objects[0];
@@ -60,7 +61,7 @@ public class TriggerBoxLem : MonoBehaviour
             {
                 fingerDownOnObject = true;
                 Sfx.Play();
-                cursor.SetActive(false);
+                cursorLem.SetActive(false);
             }
         }
     }
@@ -72,7 +73,7 @@ public class TriggerBoxLem : MonoBehaviour
         {
             return;
         }
-        cursor.SetActive(true);
+        cursorLem.SetActive(true);
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(finger.ScreenPosition);
 
@@ -93,7 +94,7 @@ public class TriggerBoxLem : MonoBehaviour
                 {
                     passedObject3 = true;
                     startPoint = objects[2];
-                    cursor.SetActive(true);
+                    cursorLem.SetActive(true);
                     trigger = "LemKiri";
                 }
             }
@@ -103,13 +104,13 @@ public class TriggerBoxLem : MonoBehaviour
                 {
                     passedObject4 = true;
                     startPoint = objects[3];
-                    cursor.SetActive(true);
+                    cursorLem.SetActive(true);
                     trigger = "LemAtas";
                 }
             }
             else if (hit.collider.gameObject == objects[0] && fingerDownOnObject && passedObject2 && passedObject3 && passedObject4)
             {
-                Destroy(cursor);
+                Destroy(cursorLem);
                 After.gameObject.SetActive(true);
                 ButtonHover.gameObject.transform.GetChild(Child - 1).gameObject.SetActive(false);
                 ButtonHover.gameObject.transform.GetChild(Child).gameObject.SetActive(true);
@@ -117,8 +118,9 @@ public class TriggerBoxLem : MonoBehaviour
                 Instruksi.gameObject.transform.GetChild(Child).gameObject.SetActive(true);
                 Check.gameObject.SetActive(true);
                 Sfx.Stop();
-                this.enabled = false;
                 DaunKering.LemDone = true;
+                cursorDaunKering.SetActive(true);
+                this.enabled = false;
             }
             fingerDownOnObject = false;
         }
