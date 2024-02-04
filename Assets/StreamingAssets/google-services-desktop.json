@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "50325129172",
+    "firebase_url": "https://doko-2ba80-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "doko-2ba80",
+    "storage_bucket": "doko-2ba80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50325129172:android:3dde44bb81b4e75170f841",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.FirebaseAuth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50325129172-hv0o1pkd49tgq0v77rg222etuv97j5ke.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.DefaultCompany.FirebaseAuth",
+            "certificate_hash": "1c8ec1265a6cfb3c12e14a207b885e811ab3a060"
+          }
+        },
+        {
+          "client_id": "50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfyYfi9BCOGQO4ikbIrH1RVLyjhehiVSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50325129172:android:22257fa44735907570f841",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50325129172-rigkecjnbvbgg4frjsm47bbaqm4l65d4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.DefaultCompany.testing",
+            "certificate_hash": "b0761b38346d1b85d5d33a2b6a3681573f2bedba"
+          }
+        },
+        {
+          "client_id": "50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfyYfi9BCOGQO4ikbIrH1RVLyjhehiVSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:50325129172:android:86e366ab0c859ddf70f841",
+        "android_client_info": {
+          "package_name": "com.UnikomCodelabs.Doko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfyYfi9BCOGQO4ikbIrH1RVLyjhehiVSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

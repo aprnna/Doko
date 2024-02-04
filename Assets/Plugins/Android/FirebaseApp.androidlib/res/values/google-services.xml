@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://doko-2ba80-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">50325129172</string>
+  <string name="google_storage_bucket" translatable="false">doko-2ba80.appspot.com</string>
+  <string name="project_id" translatable="false">doko-2ba80</string>
+  <string name="google_api_key" translatable="false">AIzaSyAfyYfi9BCOGQO4ikbIrH1RVLyjhehiVSI</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAfyYfi9BCOGQO4ikbIrH1RVLyjhehiVSI</string>
+  <string name="google_app_id" translatable="false">1:50325129172:android:86e366ab0c859ddf70f841</string>
+  <string name="default_web_client_id" translatable="false">50325129172-at17sn7bn9cad2utvm0clla0rcb2t77f.apps.googleusercontent.com</string>
+</resources>
