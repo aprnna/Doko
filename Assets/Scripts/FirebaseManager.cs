@@ -316,11 +316,11 @@ public class FirebaseManager : MonoBehaviour
             }
         }    
     }
-    public void OnGUI()
-    {
-        GUILayout.BeginArea(new Rect(50, 50, 100, 100));
-        GUILayout.Label(user.UserId);
-        GUILayout.Label(status);
-        GUILayout.EndArea();
-    }
+    //public void OnGUI()
+    //{
+    //    GUILayout.BeginArea(new Rect(50, 50, 100, 100));
+    //    GUILayout.Label(user.UserId);
+    //    GUILayout.Label(status);
+    //    GUILayout.EndArea();
+    //}
 }
