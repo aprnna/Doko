@@ -9,7 +9,7 @@ A Learning game that utilizes augmented reality technology to educate children f
 ## how to install doko app
 
 1. **Download the APK:**
-Click the following link to download the latest version of the APK: [Link to APK on GitHub or other source]
+Click the following link to download the latest version of the APK: [Link](https://github.com/aprnna/Doko/releases/tag/1.0)
 
 2. **Install the APK:**
     - Open your file manager app and locate the downloaded APK file.
