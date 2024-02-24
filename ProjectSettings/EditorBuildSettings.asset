@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SandboxRazak.unity
     guid: d6ead75eccad069409cd0ba2a5c2ee2d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TrashCollection.unity
     guid: dee6441f26e346f4bbe35c79fc9b8951
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/TrashScan.unity
     guid: df35b54522db2904ea44fd98fe5f5780
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ARTrash.unity
     guid: 8ac4646717da7c344b2b40a6d276aac8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Recycle_kaleng.unity
     guid: a69856830751b184bb3c5d69785245ac
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Recycle_botol.unity
     guid: 29a2f4d2d228a3b4f8bdf9a4b4f2f14c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Recycle_daunKering.unity
     guid: d48f0af06ad1f4d4b83502cf5c16a09c
   - enabled: 1

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Player;
 public class TrashCollection : MonoBehaviour
 {
     public Trash[] trashes;
@@ -11,10 +11,13 @@ public class TrashCollection : MonoBehaviour
     public Image[] trashImage;
 
     public Image[] checkImage;
-    
+
+    private PlayerManager _pm;
+
     // Start is called before the first frame update
     void Start()
     {
+        _pm = PlayerManager.Instance;
         for (int i = 0; i < trashes.Length; i++)
         {
             Trash scriptableObject = SaveLoadManager.LoadScriptableObject<Trash>(trashes[i].id + ".json");

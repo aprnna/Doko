@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Lean.Touch;
+using Player;
 public class Berhasiil : MonoBehaviour
 {
     public GameObject Check;
@@ -16,8 +17,11 @@ public class Berhasiil : MonoBehaviour
     private Animator mAnimator2;
     private Animator mAnimator3;
 
+    private PlayerManager _pm;
+
     private void Start()
     {
+        _pm = PlayerManager.Instance;
         mAnimator = Background.transform.GetChild(0).GetComponent<Animator>();
         mAnimator2 = Background.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
         mAnimator3 = Background.transform.GetChild(0).GetChild(1).GetComponent<Animator>();
@@ -50,6 +54,7 @@ public class Berhasiil : MonoBehaviour
     private IEnumerator PlayAudioAndChangeScene(GameObject Background)
     {
         _isPlaying = true;
+        _pm.Coin += 80;
         var audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);

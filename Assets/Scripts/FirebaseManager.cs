@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Firebase;
@@ -7,15 +8,17 @@ using Google;
 using TMPro;
 using UnityEngine;
 using Firebase.Extensions;
-using System.Collections;
 using Firebase.Database;
+using Player;
+using Newtonsoft.Json;
 
-public class FirebaseLogInScript : MonoBehaviour
+public class FirebaseManager : MonoBehaviour
 {
-    [Header("LOGIN")]
+    public static FirebaseManager Instance;
+    private PlayerManager pm;
+
     public string webClientId = "<your client id here>";
-    public TMP_Text infoText;
-    public TMP_Text playerInfo;
+    private string status;
 
     private FirebaseAuth auth;
     public FirebaseUser user;
@@ -23,14 +26,24 @@ public class FirebaseLogInScript : MonoBehaviour
     private GoogleSignInConfiguration configuration;
     private DependencyStatus dependencyStatus;
 
-    [Header("USER DATA")]
-    public PlayerData playerData;
-    public TMP_Text playerLevel;
-
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
         configuration = new GoogleSignInConfiguration { WebClientId = webClientId, RequestEmail = true, RequestIdToken = true };
         StartCoroutine(CheckFirebaseDependencies());
+    }
+
+    private void Start()
+    {
+        pm = PlayerManager.Instance;
     }
 
     private IEnumerator CheckFirebaseDependencies()
@@ -87,7 +100,7 @@ public class FirebaseLogInScript : MonoBehaviour
         }
         else
         {
-            //SignInWithGoogle();
+            SignInWithGoogle();
             //UIManager.instance.LoginScreen();
         }
     }
@@ -95,14 +108,14 @@ public class FirebaseLogInScript : MonoBehaviour
     {
         if(user != null)
         {
-            playerInfo.text = user.UserId;
+            AddToInformation(user.UserId);
             //UIManager.instance.UserDataScreen();
             StartCoroutine(LoadPlayer());
         }
         else
         {
 
-            //SignInWithGoogle();
+            SignInWithGoogle();
             //UIManager.instance.LoginScreen();
         }
     }
@@ -127,7 +140,7 @@ public class FirebaseLogInScript : MonoBehaviour
         {
             GoogleSignIn.DefaultInstance.SignOut();
         }
-        playerInfo.text = "Sign Out";
+        AddToInformation("Sign Out");
         auth.SignOut();
         user.DeleteAsync();
         //UIManager.instance.LoginScreen();
@@ -178,7 +191,10 @@ public class FirebaseLogInScript : MonoBehaviour
             if (ex != null)
             {
                 if (ex.InnerExceptions[0] is FirebaseException inner && (inner.ErrorCode != 0))
+                {
                     AddToInformation("\nError code = " + inner.ErrorCode + " Message = " + inner.Message);
+                    SignInAnonymous();
+                }
             }
             else
             {
@@ -217,8 +233,8 @@ public class FirebaseLogInScript : MonoBehaviour
     }
     private void SuccessLogin()
     {
-        playerInfo.text = user.UserId;
-        StartCoroutine(LoadPlayer());
+        AddToInformation(user.UserId);
+        LoadData();
         //UIManager.instance.UserDataScreen();
     }
     public void OnSignInSilently()
@@ -242,16 +258,22 @@ public class FirebaseLogInScript : MonoBehaviour
         GoogleSignIn.DefaultInstance.SignIn().ContinueWith(OnAuthenticationFinished);
     }
 
-    private void AddToInformation(string str) { infoText.text += "\n" + str; }
+    private void AddToInformation(string str) { status += "\n" + str; }
 
-    public void SaveDataButton()
+    public void SaveData()
     {
         StartCoroutine(SavePlayer());
     }
+    public void LoadData()
+    {
+        StartCoroutine(LoadPlayer());
+    }
     private IEnumerator SavePlayer()
     {
-        string json = JsonUtility.ToJson(playerData);
-        var DBTask = DBreference.Child("users").Child(user.UserId).SetRawJsonValueAsync(json);
+        Dictionary<string, object> result = new Dictionary<string, object>();
+        result["Coin"] = pm.Coin.ToString();
+        result["Trashes"] = JsonConvert.SerializeObject(pm.trashes);
+        var DBTask = DBreference.Child("users").Child(user.UserId).UpdateChildrenAsync(result);
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
         if (DBTask.Exception != null)
@@ -261,7 +283,6 @@ public class FirebaseLogInScript : MonoBehaviour
         else
         {
             Debug.Log("UPDATED");
-            StartCoroutine(LoadPlayer());
         }
 
     }
@@ -278,9 +299,14 @@ public class FirebaseLogInScript : MonoBehaviour
             DataSnapshot snapshot = DBTask.Result;
             if (snapshot != null)
             {
-                var level = snapshot.Child("Level").Value.ToString();
-                Debug.Log(level);
-                playerLevel.text = level;
+                pm.Coin = int.Parse(snapshot.Child("Coin").Value.ToString());
+                var result = snapshot.Child("Trashes").Value.ToString();
+                Dictionary<string, bool> convert = JsonConvert.DeserializeObject<Dictionary<string, bool>>(result);
+
+                foreach (var kvp in convert) 
+                {
+                    pm.SetTrash(kvp.Key, kvp.Value);
+                }
                 Debug.Log("Data Exist");
             }
             else
@@ -292,8 +318,9 @@ public class FirebaseLogInScript : MonoBehaviour
     }
     public void OnGUI()
     {
-        GUILayout.BeginArea(new Rect(0, 0, 100, 100));
+        GUILayout.BeginArea(new Rect(50, 50, 100, 100));
         GUILayout.Label(user.UserId);
+        GUILayout.Label(status);
         GUILayout.EndArea();
     }
 }

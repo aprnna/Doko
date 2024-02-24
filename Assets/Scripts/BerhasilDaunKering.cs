@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Player;
 public class BerhasilDaunKering : MonoBehaviour
 {
     public Canvas CanvasMain;
@@ -12,9 +12,11 @@ public class BerhasilDaunKering : MonoBehaviour
     public GameObject[] objects;
     private Animator mAnimator;
     private Animator mAnimator3;
+    private PlayerManager _pm;
     // Start is called before the first frame update
     void Start()
     {
+        _pm = PlayerManager.Instance;
         mAnimator = Background.transform.GetChild(0).GetComponent<Animator>();
         mAnimator3 = Background.transform.GetChild(0).GetChild(1).GetComponent<Animator>();
 
@@ -27,6 +29,7 @@ public class BerhasilDaunKering : MonoBehaviour
         bool allChildrenActive = CheckAllChildrenActiveStatus();
         if (allChildrenActive && Done)
         {
+            _pm.Coin += 80;
             CanvasMain.gameObject.SetActive(false);
             CanvasBerhasil.gameObject.SetActive(true);
             for (int i = 0; i < objects.Length; i++)
