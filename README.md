@@ -6,7 +6,7 @@
 # Doko Apps
 
 A Learning game that utilizes augmented reality technology to educate children from an early age about waste management and recycling. The game is presented in a unique and interactive way that creates a real-world experience for the child.
-## how to install doko app
+## How to install Doko App
 
 1. **Download the APK:**
 Click the following link to download the latest version of the APK: [Link](https://github.com/aprnna/Doko/releases/tag/1.0)
