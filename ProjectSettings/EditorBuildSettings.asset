@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Recycle_kaleng.unity
     guid: a69856830751b184bb3c5d69785245ac
   - enabled: 1
-    path: Assets/Scenes/Recycle_botol.unity
+    path: Assets/Scenes/RecycleBottle.unity
     guid: 29a2f4d2d228a3b4f8bdf9a4b4f2f14c
   - enabled: 1
     path: Assets/Scenes/Recycle_daunKering.unity
