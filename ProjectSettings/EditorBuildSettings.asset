@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SandboxRazak.unity
     guid: d6ead75eccad069409cd0ba2a5c2ee2d
   - enabled: 1
-    path: Assets/Scenes/TrashCollection.unity
+    path: Assets/Scenes/TrashCollection2.unity
     guid: dee6441f26e346f4bbe35c79fc9b8951
   - enabled: 1
     path: Assets/Scenes/TrashScan.unity
@@ -21,13 +21,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Recycle_kaleng.unity
     guid: a69856830751b184bb3c5d69785245ac
   - enabled: 1
-    path: Assets/Scenes/Recycle_botol.unity
+    path: Assets/Scenes/RecycleBottle.unity
     guid: 29a2f4d2d228a3b4f8bdf9a4b4f2f14c
   - enabled: 1
-    path: Assets/Scenes/Recycle_daunKering.unity
+    path: Assets/Scenes/RecycleDriedLeaves.unity
     guid: d48f0af06ad1f4d4b83502cf5c16a09c
   - enabled: 1
-    path: Assets/Scenes/Recycle_kardus.unity
+    path: Assets/Scenes/RecycleCardboard.unity
     guid: e8d17347273ce2345a2818486ca6040a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 284c8cbbdf2fcec4aad982d5ee28d3a8,
