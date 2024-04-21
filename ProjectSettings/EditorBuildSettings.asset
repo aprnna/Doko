@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/RecycleBottle.unity
     guid: 29a2f4d2d228a3b4f8bdf9a4b4f2f14c
   - enabled: 1
-    path: Assets/Scenes/Recycle_daunKering.unity
+    path: Assets/Scenes/RecycleDriedLeaves.unity
     guid: d48f0af06ad1f4d4b83502cf5c16a09c
   - enabled: 1
     path: Assets/Scenes/RecycleCardboard.unity
