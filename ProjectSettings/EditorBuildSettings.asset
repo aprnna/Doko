@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SandboxRazak.unity
     guid: d6ead75eccad069409cd0ba2a5c2ee2d
   - enabled: 1
-    path: Assets/Scenes/TrashCollection.unity
+    path: Assets/Scenes/TrashCollection2.unity
     guid: dee6441f26e346f4bbe35c79fc9b8951
   - enabled: 1
     path: Assets/Scenes/TrashScan.unity
