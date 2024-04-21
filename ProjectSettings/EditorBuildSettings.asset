@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Recycle_daunKering.unity
     guid: d48f0af06ad1f4d4b83502cf5c16a09c
   - enabled: 1
-    path: Assets/Scenes/Recycle_kardus.unity
+    path: Assets/Scenes/RecycleCardboard.unity
     guid: e8d17347273ce2345a2818486ca6040a
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 284c8cbbdf2fcec4aad982d5ee28d3a8,
