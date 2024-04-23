@@ -11,7 +11,7 @@ using Firebase.Extensions;
 using Firebase.Database;
 using Player;
 using Newtonsoft.Json;
-
+using UnityEngine.Networking;
 public class FirebaseManager : MonoBehaviour
 {
     public static FirebaseManager Instance;
@@ -37,6 +37,7 @@ public class FirebaseManager : MonoBehaviour
             Instance = this;
         }
         DontDestroyOnLoad(gameObject);
+        CheckInternet();
         configuration = new GoogleSignInConfiguration { WebClientId = webClientId, RequestEmail = true, RequestIdToken = true };
         StartCoroutine(CheckFirebaseDependencies());
     }
@@ -45,7 +46,21 @@ public class FirebaseManager : MonoBehaviour
     {
         pm = PlayerManager.Instance;
     }
-
+    private void CheckInternet()
+    {
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            Debug.Log("Network Not Available");
+        }
+        else if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+        {
+            Debug.Log("Network is Available through wifi");
+        }
+        else if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork)
+        {
+            Debug.Log("Network is Available through data");
+        }
+    }
     private IEnumerator CheckFirebaseDependencies()
     {
         var dependencyTask = FirebaseApp.CheckAndFixDependenciesAsync();
