@@ -40,6 +40,7 @@ public class RecycleCardBoard : MonoBehaviour
     public Animator mRecycleCardboard;
     void Start()
     {
+        _pm = PlayerManager.Instance;
         _mAnimatorCursorPaint = CursorPaint.GetComponent<Animator>();
         _mAnimatorCursorCut = CursorCut.GetComponent<Animator>();
         _mAnimatorCursor = Cursor.GetComponent<Animator>();

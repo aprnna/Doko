@@ -31,6 +31,7 @@ public class RecycleDriedLeavesScript : MonoBehaviour
     public Animator mRecycleDriedLeaves;
     void Start()
     {
+        _pm = PlayerManager.Instance;
         _mAnimatorCursor = Cursor.GetComponent<Animator>();
         _mAnimatorCursorPainting = CursorPainting.GetComponent<Animator>();
         StartCoroutine(Gluing());
