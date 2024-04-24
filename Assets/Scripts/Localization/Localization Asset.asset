@@ -33,5 +33,31 @@ MonoBehaviour:
     - text:
       - Ubah sampah menjadi barang keren!
       - Turn waste into cool stuff!
-  - pageName: 
-    dictionaries: []
+  - pageName: Trash Collection
+    dictionaries:
+    - text:
+      - Koleksi Sampah
+      - Trash Collection
+    - text:
+      - Organik
+      - Organic
+    - text:
+      - Anorganik
+      - Inorganic
+    - text:
+      - Cari sampah
+      - Search Waste
+    - text:
+      - 
+      - 
+    - text:
+      - 
+      - 
+  - pageName: Trash Scan
+    dictionaries:
+    - text:
+      - Pindai
+      - Scan
+    - text:
+      - Koleksi Sampah
+      - Waste Collection

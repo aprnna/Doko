@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: sayur
   m_EditorClassIdentifier: 
   id: sayur
-  name: Sayur
-  description: Sayur termasuk sampah organik yang bisa di daur ulang
+  name: Vegetable
+  description: Vegetable is organic waste that can be recycled
   image: {fileID: 21300000, guid: 3696b5e5fb48f6141a34a9becdaec1b3, type: 3}
-  trashType: Organik
+  trashType: Organic
   scanned: 0

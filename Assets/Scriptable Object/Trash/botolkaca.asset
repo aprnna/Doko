@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: botolkaca
   m_EditorClassIdentifier: 
   id: botolkaca
-  name: Botol Kaca
-  description: Botol Kaca termasuk sampah anorganik yang bisa di daur ulang
+  name: Glass Bottle
+  description: Glass Bottles are inorganic waste that can be recycled
   image: {fileID: 21300000, guid: 575d4939c3ea2dc4ab4a8164cf1886f6, type: 3}
-  trashType: Anorganik
+  trashType: Inorganic
   scanned: 0

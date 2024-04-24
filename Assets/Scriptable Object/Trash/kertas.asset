@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: kertas
   m_EditorClassIdentifier: 
   id: kertas
-  name: Kertas
-  description: Kertas termasuk sampah organik yang bisa di daur ulang
+  name: Paper
+  description: Paper is a recyclable organic waste
   image: {fileID: 21300000, guid: 6155b3c4507415147ac43b000213ab35, type: 3}
-  trashType: Organik
+  trashType: Organic
+  scanned: 0

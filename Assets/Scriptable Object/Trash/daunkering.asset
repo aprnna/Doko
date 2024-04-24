@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: daunkering
   m_EditorClassIdentifier: 
   id: daunkering
-  name: Daun Kering
-  description: Daun Kering termasuk sampah organik yang bisa di daur ulang
+  name: Dried Leaf
+  description: Dried Leaves are recyclable organic waste
   image: {fileID: 21300000, guid: 3696b5e5fb48f6141a34a9becdaec1b3, type: 3}
-  trashType: Organik
+  trashType: Organic
+  scanned: 0
