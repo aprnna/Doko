@@ -48,11 +48,129 @@ MonoBehaviour:
       - Cari sampah
       - Search Waste
     - text:
-      - 
-      - 
+      - Sampah Anorganic
+      - Inorganic Waste
     - text:
-      - 
-      - 
+      - Kaleng
+      - Canned Bottle
+    - text:
+      - Botol Kaca
+      - Glass Bottle
+    - text:
+      - Botol Plastik
+      - Plastic Bottle
+    - text:
+      - Sampah Organik
+      - Organic Waste
+    - text:
+      - Daun Kering
+      - Dried Leaf
+    - text:
+      - Kertas
+      - Paper
+    - text:
+      - Buah
+      - Fruit
+    - text:
+      - Kardus
+      - Cardboard
+    - text:
+      - Sayuran
+      - Vegetable
+    - text:
+      - Informasi
+      - Information
+    - text:
+      - Definisi
+      - Definition
+    - text:
+      - 'These are non-living materials and are not made from plants or animals. '
+      - 'These are non-living materials and are not made from plants or animals. '
+    - text:
+      - Contoh
+      - Example
+    - text:
+      - Canned bottles, plastic bottles, cardboard, plastic bags, vegetables, dried
+        leaf, canned bottles, and others.
+      - Canned bottles, plastic bottles, cardboard, plastic bags, vegetables, dried
+        leaf, canned bottles, and others.
+    - text:
+      - Tutup
+      - Close
+    - text:
+      - Informasi
+      - Information
+    - text:
+      - Definisi
+      - Definition
+    - text:
+      - 'Organic materials are derived from living organisms or their byproducts,
+        typically decomposable by natural processes. '
+      - 'Organic materials are derived from living organisms or their byproducts,
+        typically decomposable by natural processes. '
+    - text:
+      - Contoh
+      - Example
+    - text:
+      - buah, sayuran, kayu, kapas, kertas, dan sisa makanan
+      - fruits, vegetables, wood, cotton, paper, and food scraps.
+    - text:
+      - Tutup
+      - Close
+    - text:
+      - Kembali
+      - Back
+    - text:
+      - 'Pasti kamu sering melihat botol plastik ini bukan? biasanya sering kita
+        temui sehari-hari di berbagai produk, seperti pada botol minum, botol minyak,
+        dan produk lainnya yang biasanya terbuat dari bahan PET (Polyethylene Terephthalate)
+        atau plastik lainnya seperti HDPE (High-Density Polyethylene) atau LDPE (Low-Density
+        Polyethylene). '
+      - 'Isn''t it familiar to come across this plastic bottle often? We see it in
+        our daily lives, like in drinking bottles, oil bottles, and other products
+        made of PET (Polyethylene Terephthalate), HDPE (High-Density Polyethylene),
+        or LDPE (Low-Density Polyethylene). '
+    - text:
+      - Bahan baku untuk botol-botol plastik ini berasal dari minyak bumi atau gas
+        alam, dan kemudian diproses menjadi berbagai macam produk plastik yang kita
+        kenal.
+      - These plastic bottles are made from raw materials derived from petroleum
+        or natural gas and then transformed into the products we know and use regularly.
+    - text:
+      - FAKTA MENARIK
+      - FUN FACT
+    - text:
+      - Tahukah Kamu? Botol plastik terutama yang terbuat dari plastik PET (Polyethylene
+        Terephthalate), butuh waktu hingga ratusan tahun untuk terurai sepenuhnya
+        jika tidak didaur ulang dengan benar. Dalam kondisi tertentu, bisa lebih
+        dari 400 tahun, lho! sebelum benar-benar terurai menjadi bahan yang tidak
+        berbahaya.
+      - Did you know that plastic bottles, especially the ones made from PET (Polyethylene
+        Terephthalate) plastic, can actually take hundreds of years to fully break
+        down if they are not recycled properly? In some cases, it may even take over
+        400 years for it to completely decompose into safe materials.
+    - text:
+      - DAMPAK
+      - IMPACT
+    - text:
+      - Dampak dari botol plastik cukup mengkhawatirkan karena botol plastik dapat
+        melepaskan bahan kimia berbahaya ke lingkungan dari waktu ke waktu, terutama
+        ketika terpapar panas atau paparan jangka panjang, yang mengarah ke pencemaran
+        air dan tanah dan berpotensi mempengaruhi kesehatan manusia melalui rantai
+        makanan.
+      - And the impact of plastic bottles is quite concerning as they can release
+        harmful chemicals into the environment over time, particularly when exposed
+        to heat or long-term exposure, leading to water and soil pollution and potentially
+        affecting human health through the food chain.
+    - text:
+      - Baiklah, teman-teman, kita akan mengatasi tantangan ini! Mari kita buat perubahan
+        dengan mendaur ulang bersama!
+      - Baiklah, teman-teman, kita akan mengatasi permasalahan ini! Mari kita buat
+        perubahan dengan mendaur ulang botol plastik ini menjadi barang yang dapat
+        digunakan kembali dengan mendekorasinya menjadi barang baru bersama!
+    - text:
+      - Ayo Daur Ulang!
+      - Let's Recycle!
   - pageName: Trash Scan
     dictionaries:
     - text:
