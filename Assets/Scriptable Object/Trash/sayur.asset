@@ -15,6 +15,6 @@ MonoBehaviour:
   id: sayur
   name: Vegetable
   description: Vegetable is organic waste that can be recycled
-  image: {fileID: 21300000, guid: 3696b5e5fb48f6141a34a9becdaec1b3, type: 3}
+  image: {fileID: 21300000, guid: 42943b38df5177541b22f655ab8db951, type: 3}
   trashType: Organic
   scanned: 0

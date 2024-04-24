@@ -15,6 +15,6 @@ MonoBehaviour:
   id: buah
   name: Fruit
   description: Fruit is recyclable organic waste
-  image: {fileID: 21300000, guid: 3696b5e5fb48f6141a34a9becdaec1b3, type: 3}
+  image: {fileID: 21300000, guid: 57f46cd8f1e78f14896976974313eb03, type: 3}
   trashType: Organic
   scanned: 0
