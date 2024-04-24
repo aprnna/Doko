@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TrashInfo : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class TrashInfo : MonoBehaviour
     public string[] SceneRecycleName;
 
     public Image trashImage;
-    public Text titletxt;
-    public Text categorytxt;
+    public TMP_Text titletxt;
+    public TMP_Text categorytxt;
 
     private int _selected;
     // Start is called before the first frame update
@@ -25,7 +26,7 @@ public class TrashInfo : MonoBehaviour
     {
         _selected = index;
         gameObject.SetActive(true);
-        ContentInfo[index].SetActive(true);
+        if (ContentInfo[index]) ContentInfo[index].SetActive(true);
         trashImage.sprite = trashSprite[index];
         titletxt.text = trashes[index].name;
         categorytxt.text = trashes[index].trashType;
@@ -33,12 +34,12 @@ public class TrashInfo : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(SceneRecycleName[_selected]);
+        if(SceneRecycleName[_selected]!=null) SceneManager.LoadScene(SceneRecycleName[_selected]);
     }
 
     private void OnDisable()
     {
-        ContentInfo[_selected].SetActive(false);
+        if (ContentInfo[_selected]) ContentInfo[_selected].SetActive(false);
     }
 
 }
