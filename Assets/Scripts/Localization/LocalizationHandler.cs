@@ -10,7 +10,7 @@ public class LocalizationHandler : MonoBehaviour
     [SerializeField] private Localization _localizationAsset;
     [SerializeField] private TMP_Text[] _texts;
 
-    void Awake()
+    void Start()
     {
         for (int i = 0; i < _texts.Length; i++)
         {
