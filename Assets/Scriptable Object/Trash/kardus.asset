@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Cardboard
   description: Cardboard is organic waste that can be recycled
   image: {fileID: 21300000, guid: 6155b3c4507415147ac43b000213ab35, type: 3}
-  trashType: Organic
+  trashType: Biodegradable
   scanned: 0

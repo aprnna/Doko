@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Plastic Bottle
   description: Plastic Bottle is inorganic waste that can be recycled
   image: {fileID: 21300000, guid: 0697254ae2a7bad4fa31dd72e4d517ee, type: 3}
-  trashType: Inorganic
+  trashType: Non Biodegradable
   scanned: 0

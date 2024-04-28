@@ -39,17 +39,17 @@ MonoBehaviour:
       - Koleksi Sampah
       - Trash Collection
     - text:
-      - Organik
-      - Organic
+      - Biodegradable
+      - Biodegradable
     - text:
-      - Anorganik
-      - Inorganic
+      - Non Biodegradable
+      - Non Biodegradable
     - text:
       - Cari sampah
       - Search Waste
     - text:
-      - Sampah Anorganic
-      - Inorganic Waste
+      - Sampah Non Biodegradable
+      - Non Biodegradable Waste
     - text:
       - Kaleng
       - Canned Bottle
@@ -60,8 +60,8 @@ MonoBehaviour:
       - Botol Plastik
       - Plastic Bottle
     - text:
-      - Sampah Organik
-      - Organic Waste
+      - Sampah Biodegradable
+      - Biodegradable Waste
     - text:
       - Daun Kering
       - Dried Leaf
@@ -104,9 +104,9 @@ MonoBehaviour:
       - Definisi
       - Definition
     - text:
-      - 'Organic materials are derived from living organisms or their byproducts,
+      - 'Biodegradable materials are derived from living organisms or their byproducts,
         typically decomposable by natural processes. '
-      - 'Organic materials are derived from living organisms or their byproducts,
+      - 'Biodegradable materials are derived from living organisms or their byproducts,
         typically decomposable by natural processes. '
     - text:
       - Contoh

@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Dried Leaf
   description: Dried Leaves are recyclable organic waste
   image: {fileID: 21300000, guid: 3696b5e5fb48f6141a34a9becdaec1b3, type: 3}
-  trashType: Organic
+  trashType: Biodegradable
   scanned: 0

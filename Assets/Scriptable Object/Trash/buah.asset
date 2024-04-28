@@ -16,5 +16,5 @@ MonoBehaviour:
   name: Fruit
   description: Fruit is recyclable organic waste
   image: {fileID: 21300000, guid: 57f46cd8f1e78f14896976974313eb03, type: 3}
-  trashType: Organic
+  trashType: Biodegradable
   scanned: 0
