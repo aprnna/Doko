@@ -179,3 +179,26 @@ MonoBehaviour:
     - text:
       - Koleksi Sampah
       - Waste Collection
+  - pageName: Recycle Bottle
+    dictionaries:
+    - text:
+      - Membuat Vas Bunga
+      - Making Flower Vase
+    - text:
+      - Pertama, kita potong ujung botolnya
+      - First, we cut off the tip of the bottle
+    - text:
+      - Selanjutnya, beri warna cat pada potongan botol
+      - Next, give the bottle pieces a paint color
+    - text:
+      - Terakhir, tambahkan gambar lucu pada potongan botol
+      - Finally, add a cute picture on the bottle piece
+    - text:
+      - Yeay! kamu berhasil mendaur ulang sampah menjadi
+      - Yeay! You have successfully recycled waste into
+    - text:
+      - Vas Bunga
+      - Flower Vase
+    - text:
+      - Selesai
+      - Finish
