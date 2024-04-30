@@ -11,12 +11,13 @@ public class ScreenTimeController : MonoBehaviour
     public float maxPlayTimePerDay; // Menit
     public float waitTime; // Menit
     
-    public TimeSpan currentPlayTime;
-    public TimeSpan currentWaitTime;
-    public bool canPlay = true;
+    public TimeSpan CurrentPlayTime;
+    public TimeSpan CurrentWaitTime;
+    public bool canPlay;
 
-    private const string playTimeKey = "PlayTime";
-    private const string waitTimeKey = "WaitTime";
+    private const string PlayTimeKey = "PlayTime";
+    private const string WaitTimeKey = "WaitTime";
+    private const string CanPlayKey = "CanPlay";
 
     void Start()
     {
@@ -36,24 +37,23 @@ public class ScreenTimeController : MonoBehaviour
     {
         if (canPlay)
         {
-            currentPlayTime += TimeSpan.FromSeconds(Time.deltaTime);
-            if (currentPlayTime.TotalMinutes >= maxPlayTimePerDay)
+            CurrentPlayTime += TimeSpan.FromSeconds(Time.deltaTime);
+            if (CurrentPlayTime.TotalMinutes >= maxPlayTimePerDay)
             {
                 canPlay = false;
-                currentWaitTime = TimeSpan.FromMinutes(waitTime);
+                CurrentWaitTime = TimeSpan.FromMinutes(waitTime);
+                CurrentPlayTime = TimeSpan.Zero;
             }
         }
         else
         {
-            if (currentWaitTime.TotalSeconds > 0)
+            if (CurrentWaitTime.TotalSeconds > 0)
             {
-                currentWaitTime -= TimeSpan.FromSeconds(Time.deltaTime);
-                if (currentWaitTime.TotalSeconds <= 0)
+                CurrentWaitTime -= TimeSpan.FromSeconds(Time.deltaTime);
+                if (CurrentWaitTime.TotalSeconds <= 0)
                 {
                     canPlay = true;
-                    currentPlayTime = TimeSpan.Zero;
-                    currentWaitTime = TimeSpan.Zero;
-
+                    CurrentPlayTime = TimeSpan.Zero;
                 }
             }
         }
@@ -62,17 +62,19 @@ public class ScreenTimeController : MonoBehaviour
 
     void SaveData()
     {
-        PlayerPrefs.SetString(playTimeKey, currentPlayTime.ToString());
-        PlayerPrefs.SetString(waitTimeKey, currentWaitTime.ToString());
+        PlayerPrefs.SetString(PlayTimeKey, CurrentPlayTime.ToString());
+        PlayerPrefs.SetString(WaitTimeKey, CurrentWaitTime.ToString());
+        PlayerPrefs.SetString(CanPlayKey, canPlay.ToString());
     }
 
     void LoadData()
     {
-        string savedPlayTime = PlayerPrefs.GetString(playTimeKey, TimeSpan.Zero.ToString());
-        string savedWaitTime = PlayerPrefs.GetString(waitTimeKey, TimeSpan.Zero.ToString());
-
-        currentPlayTime = TimeSpan.Parse(savedPlayTime);
-        currentWaitTime = TimeSpan.Parse(savedWaitTime);
+        string savedPlayTime = PlayerPrefs.GetString(PlayTimeKey, TimeSpan.Zero.ToString());
+        string savedWaitTime = PlayerPrefs.GetString(WaitTimeKey, TimeSpan.Zero.ToString());
+        string savedCanPlay = PlayerPrefs.GetString(CanPlayKey, true.ToString());
+        CurrentPlayTime = TimeSpan.Parse(savedPlayTime);
+        CurrentWaitTime = TimeSpan.Parse(savedWaitTime);
+        canPlay = bool.Parse(savedCanPlay);
     }
 
     private void OnApplicationQuit()

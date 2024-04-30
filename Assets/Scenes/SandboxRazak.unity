@@ -2122,7 +2122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayTimePerDay: 120
-  waitTime: 1.44
+  waitTime: 1
   canPlay: 1
 --- !u!4 &504065856
 Transform:
@@ -5443,15 +5443,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sleep:
-  - {fileID: 538891322}
   - {fileID: 8909313}
   - {fileID: 1491070260}
   - {fileID: 1105773850}
   wakeUp:
   - {fileID: 1126262741}
-  - {fileID: 334408802}
-  - {fileID: 1270031671}
-  - {fileID: 151767041}
   - {fileID: 933456743}
   playTimeText: {fileID: 332381708}
   waitTimeText: {fileID: 1132743083}

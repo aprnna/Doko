@@ -16,26 +16,35 @@ public class ScreenTimeUI : MonoBehaviour
     public Slider TimeSliderInfo;
 
     private ScreenTimeController STController;
-
+    private TimeSpan currentPlayTime;
+    private TimeSpan currentWaitTime;
+    private float maxPlayTimePerDay; 
+    private float waitTime; 
+    
+    private bool canPlay;
+    
     void Start()
     {
         STController = ScreenTimeController.Instance;
         UpdateUI();
+
     }
 
     void Update()
     {
+        if (STController.canPlay) SleepWakeupControl(wakeUp, sleep);
+        else SleepWakeupControl(sleep, wakeUp);
         UpdateUI();
     }
 
     void UpdateUI()
     {
-        playTimeText.text = FormatTimeSpan(TimeSpan.FromMinutes(STController.maxPlayTimePerDay) - STController.currentPlayTime);
-        waitTimeText.text = FormatTimeSpan(STController.currentWaitTime);
+        playTimeText.text = FormatTimeSpan(TimeSpan.FromMinutes(STController.maxPlayTimePerDay) - STController.CurrentPlayTime);
+        waitTimeText.text = FormatTimeSpan(STController.CurrentWaitTime);
 
-        if (STController.canPlay) TimeSlider.value = 1f - ((float)STController.currentPlayTime.TotalMinutes / STController.maxPlayTimePerDay);
-        else TimeSlider.value = 1f - (float)STController.currentWaitTime.TotalMinutes / STController.waitTime;
-        TimeSliderInfo.value = 1f - ((float)STController.currentPlayTime.TotalMinutes / STController.maxPlayTimePerDay);
+        if (STController.canPlay) TimeSlider.value = 1f - ((float)STController.CurrentPlayTime.TotalMinutes / STController.maxPlayTimePerDay);
+        else TimeSlider.value = 1f - (float)STController.CurrentWaitTime.TotalMinutes / STController.waitTime;
+        TimeSliderInfo.value = 1f - ((float)STController.CurrentPlayTime.TotalMinutes / STController.maxPlayTimePerDay);
     }
 
     string FormatTimeSpan(TimeSpan timeSpan)
