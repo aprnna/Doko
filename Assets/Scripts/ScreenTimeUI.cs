@@ -20,7 +20,6 @@ public class ScreenTimeUI : MonoBehaviour
     void Start()
     {
         STController = ScreenTimeController.Instance;
-        DontDestroyOnLoad(gameObject);
         UpdateUI();
     }
 

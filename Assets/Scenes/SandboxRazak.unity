@@ -2092,6 +2092,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490768807}
   m_CullTransparentMesh: 1
+--- !u!1 &504065854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504065856}
+  - component: {fileID: 504065855}
+  m_Layer: 0
+  m_Name: Screen Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &504065855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504065854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4c95f41caa3b964899d7fde467fc75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayTimePerDay: 120
+  waitTime: 1.44
+  canPlay: 1
+--- !u!4 &504065856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504065854}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 983.43036, y: 651.7712, z: 188.75449}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &538891322
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,43 +5407,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1335038089}
-  - component: {fileID: 1335038088}
+  - component: {fileID: 1335038090}
   m_Layer: 0
-  m_Name: ScreenTime
+  m_Name: ScreenTimeUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1335038088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1335038087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4c95f41caa3b964899d7fde467fc75e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPlayTimePerDay: 120
-  waitTime: 1.44
-  sleep:
-  - {fileID: 8909313}
-  - {fileID: 538891322}
-  - {fileID: 1491070260}
-  - {fileID: 1105773850}
-  wakeUp:
-  - {fileID: 1126262741}
-  - {fileID: 334408802}
-  - {fileID: 1270031671}
-  - {fileID: 151767041}
-  - {fileID: 933456743}
-  playTimeText: {fileID: 332381708}
-  waitTimeText: {fileID: 1132743083}
-  TimeSlider: {fileID: 1562471653}
-  TimeSliderInfo: {fileID: 88321428}
 --- !u!4 &1335038089
 Transform:
   m_ObjectHideFlags: 0
@@ -5412,6 +5430,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1335038090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1335038087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 723d05b5cd80b8e42be76960c6ec9d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sleep:
+  - {fileID: 538891322}
+  - {fileID: 8909313}
+  - {fileID: 1491070260}
+  - {fileID: 1105773850}
+  wakeUp:
+  - {fileID: 1126262741}
+  - {fileID: 334408802}
+  - {fileID: 1270031671}
+  - {fileID: 151767041}
+  - {fileID: 933456743}
+  playTimeText: {fileID: 332381708}
+  waitTimeText: {fileID: 1132743083}
+  TimeSlider: {fileID: 1562471653}
+  TimeSliderInfo: {fileID: 88321428}
 --- !u!1 &1356588665
 GameObject:
   m_ObjectHideFlags: 0
